@@ -28,7 +28,7 @@ name of the currently mapped branch (always assuming workspaces are mapped to a 
 the changeset # of the workspace, and optionally the changeset # of the server if different from the
 workspace version.
 
-### Example: `&sect; {C:\w\SomeMappedFolder} [Main 12345] `
+### Example: `&#167; {C:\w\SomeMappedFolder} [Main 12345] `
 
 This tells us a few things.  First, `C:\w\SomeMappedFolder` is shortened to avoid lengthy paths from
 destroying the usefulness of the command line.  In this case `work` was shortened to `w`.  Next,
@@ -37,7 +37,7 @@ could be any branch.  Lastly, `12345` indicates a changeset number (version).  B
 displayed, we know that our workspace version matches the server, which can give us some confidence
 that our local version is the latest.
 
-### Example: `&sect; {C:\w\SomeMappedFolder} [Main 12345 *12350] `
+### Example: `&#167; {C:\w\SomeMappedFolder} [Main 12345 *12350] `
 
 In this example, we see `*12350`.  This indicates that the server has a newer version than our
 workspace.
