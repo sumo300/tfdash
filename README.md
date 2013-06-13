@@ -17,7 +17,9 @@ command-line experience with PowerShell and TFS.  If you have PowerTab, you can 
 as the commands follow recommended naming practices ([Verb]-[Prefix][Noun] - Get-TfsStatus).
 Unfortunately, the aliases added to the example profile will not get tab completion with PowerTab
 enabled without some modification.  Jason M. Archer may have added alias support, but you'll need to
-grab a bleeding-edge version most likely.
+grab a bleeding-edge version most likely.  Check out
+[his StackOverflow answer](http://stackoverflow.com/questions/15119039/is-it-possible-to-configure-tab-completion-with-powertab-for-aliased-functions)
+to my question on the topic.
 
 ## prompt
 
