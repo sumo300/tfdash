@@ -4,7 +4,7 @@
 	License:     GNU GENERAL PUBLIC LICENSE v3 (see license.txt for full license)
 #>
 
-$global:tfpt = "${Env:ProgramFiles(x86)}\Microsoft Team Foundation Server 2010 Power Tools\TFPT.EXE"
+$tfpt = "${Env:ProgramFiles(x86)}\Microsoft Team Foundation Server 2010 Power Tools\TFPT.EXE"
 
 Get-ChildItem $PSScriptRoot\lib -Include *.ps1 -Recurse | %{ . $_.FullName }
 
