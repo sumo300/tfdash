@@ -22,11 +22,11 @@ if ($isWin7AndUp) {
 }
 
 # Import some utilities
-Import-Module Utilities\Select-WriteHost
-Import-Module Utilities\Invoke-CmdScript
-Import-Module Utilities\VsVars32
-Import-Module Utilities\New-CommandWrapper
-Import-Module Utilities\Write-ColorLS
+Import-Module lib\Select-WriteHost
+Import-Module lib\Invoke-CmdScript
+Import-Module lib\VsVars32
+Import-Module lib\New-CommandWrapper
+Import-Module lib\Write-ColorLS
 
 # Make the TFPT PowerShell Cmdlets available
 $tfptPath = Join-Path $programFiles -ChildPath "Microsoft Team Foundation Server 2010 Power Tools\Microsoft.TeamFoundation.PowerTools.PowerShell.dll"
