@@ -4,6 +4,6 @@ Initialize-VsVars32 > $null
 
 function prompt
 {
-  Print-TfsStatus
+  Write-TfsVcsStatus
   return '> '
 }
