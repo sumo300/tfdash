@@ -4,7 +4,7 @@ $chost = [ConsoleColor]::Green;
 $cloc = [ConsoleColor]::Cyan;
 $cerr = [ConsoleColor]::Red;
 
-function Write-VcsStatus 
+function Print-TfsStatus
 {
   Write-Host "$([char]0x0A7) " -n -f $cloc
 	Write-Host "{" -n -f $cdelim
