@@ -29,8 +29,7 @@ if ((Test-Path $tfptPath) -eq $True) {
     Write-Warning "Microsoft Team Foundation Server 2010 Power Tools PowerShell CmdLets failed to register.  Make sure the cmdlets are installed (from TFPT installer).  If they are, run your PowerShell command line again if this was your first time using them."
 }
 
-# Import TFS commands
-Import-Module Tfs
+Import-Module tfdash
 
 # Initialize Visual Studio command line environment
 Initialize-VsVars32 > $null
@@ -57,51 +56,3 @@ function prompt
 		
     return " "
 }
-
-# Set up aliases for many of the commands here
-Set-Alias tf-pull Invoke-TfsPull
-Set-Alias tf-pu Invoke-TfsPull
-
-Set-Alias tf-update Invoke-TfsUpdate
-Set-Alias tf-up Invoke-TfsUpdate
-
-Set-Alias tf-sync Invoke-TfsSync
-Set-Alias tf-sy Invoke-TfsSync
-Set-Alias tf-switch Invoke-TfsSync
-Set-Alias tf-sw Invoke-TfsSync
-
-Set-Alias tf-status Get-TfsStatus
-Set-Alias tf-stat Get-TfsStatus
-Set-Alias tf-st Get-TfsStatus
-
-Set-Alias tf-review Get-TfsReview
-Set-Alias tf-rev Get-TfsReview
-
-Set-Alias tf-history Get-TfsHistory
-Set-Alias tf-hi Get-TfsHistory
-Set-Alias tf-log Get-TfsHistory
-Set-Alias tf-hist Get-TfsHistory
-
-Set-Alias tf-checkin Invoke-TfsCheckin
-Set-Alias tf-ci Invoke-TfsCheckin
-Set-Alias tf-commit Invoke-TfsCheckin
-Set-Alias tf-co Invoke-TfsCheckin
-
-Set-Alias tf-properties Get-TfsProperties
-Set-Alias tf-prop Get-TfsProperties
-
-Set-Alias tf-revisions Get-TfsVersions
-Set-Alias tf-rev Get-TfsVersions
-Set-Alias tf-versions Get-TfsVersions
-Set-Alias tf-ver Get-TfsVersions
-
-Set-Alias tf-uu Invoke-TfsUndoUnchanged
-
-Set-Alias tf-clean Invoke-TfsClean
-Set-Alias tf-cl Invoke-TfsClean
-
-Set-Alias tf-scorch Invoke-TfsScorch
-Set-Alias tf-sc Invoke-TfsScorch
-
-Set-Alias tf-undo Invoke-TfsUndo
-Set-Alias tf-un Invoke-TfsUndo
