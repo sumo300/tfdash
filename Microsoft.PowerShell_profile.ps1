@@ -21,13 +21,6 @@ if ($isWin7AndUp) {
 	}
 }
 
-# Import some utilities
-. lib\Select-WriteHost.ps1
-. lib\Invoke-CmdScript.ps1
-. lib\VsVars32.ps1
-. lib\New-CommandWrapper.ps1
-. lib\Write-ColorLS.ps1
-
 # Make the TFPT PowerShell Cmdlets available
 $tfptPath = Join-Path $programFiles -ChildPath "Microsoft Team Foundation Server 2010 Power Tools\Microsoft.TeamFoundation.PowerTools.PowerShell.dll"
 if ((Test-Path $tfptPath) -eq $True) {
