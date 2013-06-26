@@ -5,13 +5,6 @@ $cloc = [ConsoleColor]::Cyan;
 $cerr = [ConsoleColor]::Red;
 
 $isWin7AndUp = [Environment]::OSVersion.Version -ge (new-object 'Version' 6,1)
-$myDocuments = [Environment]::GetFolderPath("MyDocuments")
-$modulesPath = "\WindowsPowerShell\Modules"
-
-if ($myDocuments -eq "" -or $myDocuments -eq $null) {
-	Write-Error "Cannot determine where your My Documents folder is.  Are you running as Administrator?  Exiting profile without continuing."
-	return;
-}
 
 # Add necessary registry entry to be able to use the TFPT cmdlets from x64
 if ($isWin7AndUp) {
