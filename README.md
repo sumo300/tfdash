@@ -29,6 +29,7 @@ and modify your prompt function to display the current TFS status!
 
 ```powershell
 function prompt {
+  Write-Host $pwd -NoNewLine
   Write-TfsVcsStatus
   return '> '
 }
@@ -36,7 +37,7 @@ function prompt {
 
 ### Microsoft.PowerShell_profile.ps1
 
-This is an example PowerShell profile that can be used as-is if you don't already have one. If you have PowerTab, you can get tab-completion as the commands follow recommended naming practices ([Verb]-[Prefix][Noun] - Get-TfsStatus). Unfortunately, the aliases added to the example profile will not get tab completion with PowerTab enabled without some modification. Jason M. Archer may have added alias support, but you'll need to grab a bleeding-edge version most likely.  Check out [his StackOverflow answer][1] to my question on the topic.
+This is an example PowerShell profile that can be used as-is if you don't already have one. If you have PowerTab, you can get tab-completion as the commands follow recommended naming practices ([Verb]-[Prefix][Noun] - Get-TfsStatus). Unfortunately, the aliases added to the example profile will not get tab completion with PowerTab enabled [without some modification][1].
 
 ### prompt
 
