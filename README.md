@@ -101,7 +101,7 @@ Recursively deletes files and folders not under version control.  The `Invoke-Tf
 This command is basically a clean-up to remove untracked files/folders and is an alternative to `Invoke-TfsScorch` if all you need to do is remove untracked files.
 
 ### `Invoke-TfsUndoUnchanged`
-_aliases: `tf-uu`_'
+_aliases: `tf-uu`_
 
 Undo unchanged files.  Uses the `tfpt uu` command to undo any unchanged files recursively when compared to the latest changes.
 
