@@ -106,3 +106,30 @@ _aliases: `tf-uu`_'
 Undo unchanged files.  Uses the `tfpt uu` command to undo any unchanged files recursively when compared to the latest changes.
 
 This is one of the most helpful commands as files tend to get accidentally or unknowingly checked out and TFS does not detect unchanged files during a checkin.  If you have junior developers who check out a whole solution, tracking down changes in history is almost impossible.  This command, when used properly, can help alleviate the problem and do so quickly so that it can become a part of a developer's normal process.
+
+## Extras!
+
+### Visual Studio Command Prompt Integration
+
+You may be familiar with the "Visual Studio Command Prompt", that custom `cmd` window that adds all of the Microsoft build and source control tools to your `PATH` (for example, `tf.exe` and `msbuild.exe`). We require that you have `tf.exe` on your PATH. There are many ways to do this, including manually adding the tools bin directory to your PATH.
+
+We recommend running this tfdash-provided function that will execute the same batch script that the Visual Studio Command Prompt runs and loads all of the same Environment variables into your current session. Add this call somewhere in your PowerShell profile.
+
+```powershell
+Initialize-VsVars32 | Out-Null
+```
+
+By default, it assumes VS 10.0, but that can be changed by providing an argument
+
+```powershell
+Initialize-vsVars32 -version 11.0 | Out-Null
+```
+
+### Registering the TFPT Cmdlets
+
+You may need to explicitly register the TFPT PowerShell Cmdlets in your shell. If you find this is necessary to operate the tfdash functions properly, add one of the following calls to your PowerShell profile.
+
+```powershell
+Register-TfptCmdlets
+Register-TfptCmdlets64
+```
