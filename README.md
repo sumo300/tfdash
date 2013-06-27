@@ -1,8 +1,6 @@
 # TfDash
 
-TfDash is a set of PowerShell functions provided within modules that wrap the existing TFS command-line tool, tf.exe, the Team Foundation Power Tools (TFPT) command-line tool tfpt.exe, and TFPT's included PowerShell cmdlets.
-
-In no way is this an exhaustive list of wrappers and it is very likely that these commands don't fit your style of working with TFS.  These scripts assume a workspace is mapped to the root of a branch and most of the commands are intended to make switching from branch to branch (without requiring full branch downloads) as simple as it is in Subversion, Git, and Mercurial.
+TfDash is a set of PowerShell functions that wrap the existing TFS command-line tool, `tf.exe`, the Team Foundation Power Tools (TFPT) command-line tool, `tfpt.exe`, and TFPT's included PowerShell cmdlets. The commands are intended to make switching branches as simple as it is in Subversion, Git, and Mercurial (without requiring full branch downloads).
 
 ## Installation
 
