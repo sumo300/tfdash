@@ -35,25 +35,25 @@ function prompt {
 }
 ```
 
-### prompt
+## PowerShell Prompt
 
 This prompt function provides helpful TFS workspace information when the current directory is a mapped workspace folder. It's not as fancy as posh-git or posh-hg due to the client/server nature of TFS.  It only displays the name of the currently mapped branch (assuming workspaces are mapped to a single branch), the changeset # of the workspace, and optionally the changeset # of the server if different from the workspace version.
 
 In the example prompt below, you can see that we're on the `Main` branch (a TFS naming convention for the master branch). And the changeset number, 12345, is listed. When only one changeset is displayed, we are synchronized with the server.
 
-```bash
+```powershell
 PS [Main 12345]>
 ``` 
 
 In the example prompt here, you can see that there are two changesets, indicating that the server is ahead of our local workspace.
 
-```bash
+```powershell
 PS [Main 12345 *12350]>
 ```
 
 You can further customize the PowerShell prompt with a shorter working path representation. Replace the writing of the special working directory variable (`$pwd`) with this
 
-```bash
+```powershell
 function prompt {
   Write-ShortenedPath
   Write-TfsVcsStatus
@@ -63,7 +63,7 @@ function prompt {
 
 A shortened prompt will look something like this, with each directory in the path before the current one being shortened to just it's first character.
 
-```bash
+```powershell
 § {X:\a\b\c\SomeMappedFolder} [Main 12345]>
 ```
 
