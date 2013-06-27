@@ -47,7 +47,7 @@ In the example here, you can see that there are two changesets, indicating that 
 PS [Main 12345 *12350]>
 ```
 
-You can further customize the PowerShell prompt with a shorter working path representation. Replace the writing of the special working directory variable (`$pwd`) with this
+You can further customize the PowerShell prompt with a shorter working path representation. Replace the writing of the working directory variable (`$pwd`) with this
 
 ```powershell
 function prompt {
@@ -60,7 +60,7 @@ function prompt {
 A shortened prompt will look something like this, with each directory in the path before the current one being shortened to just it's first character.
 
 ```powershell
-§ {X:\a\b\c\SomeMappedFolder} [Main 12345]>
+X:\a\b\c\SomeMappedFolder [Main 12345]>
 ```
 
 ## Usage
