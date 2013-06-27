@@ -23,7 +23,9 @@ Import this module
 Import-Module tfdash
 ```
 
-and modify your prompt function to display the current TFS status!
+## PowerShell Prompt
+
+You can override the `prompt` function in your PowerShell profile to provide helpful TFS workspace information when the current directory is a mapped workspace folder. It's not as fancy as posh-git or posh-hg due to the client/server nature of TFS.  It only displays the name of the currently mapped branch (assuming workspaces are mapped to a single branch), the changeset # of the workspace, and optionally the changeset # of the server if different from the workspace version.
 
 ```powershell
 function prompt {
@@ -33,17 +35,13 @@ function prompt {
 }
 ```
 
-## PowerShell Prompt
-
-This prompt function provides helpful TFS workspace information when the current directory is a mapped workspace folder. It's not as fancy as posh-git or posh-hg due to the client/server nature of TFS.  It only displays the name of the currently mapped branch (assuming workspaces are mapped to a single branch), the changeset # of the workspace, and optionally the changeset # of the server if different from the workspace version.
-
-In the example prompt below, you can see that we're on the `Main` branch (a TFS naming convention for the master branch). And the changeset number, 12345, is listed. When only one changeset is displayed, we are synchronized with the server.
+In the example below, you can see that we're on the `Main` branch (a TFS naming convention for the master branch). And the changeset number, 12345, is listed. When only one changeset is displayed, we are synchronized with the server.
 
 ```powershell
 PS [Main 12345]>
 ``` 
 
-In the example prompt here, you can see that there are two changesets, indicating that the server is ahead of our local workspace.
+In the example here, you can see that there are two changesets, indicating that the server is ahead of our local workspace.
 
 ```powershell
 PS [Main 12345 *12350]>
