@@ -9,14 +9,14 @@ In no way is this an exhaustive list of wrappers and it is very likely that thes
 Clone this repository directly into your Modules directory 
 
 ```powershell
-PS> Set-Location (Split-Path $PROFILE)
+PS> Set-Location (Split-Path $profile)
 PS> hg clone https://bitbucket.org/Sumo/tfdash
 ```
 
 Open your PowerShell profile for editing
 
 ```powershell
-PS> notepad $PROFILE
+PS> notepad $profile
 ```
 
 Import this module
@@ -31,23 +31,41 @@ and modify your prompt function to display the current TFS status!
 function prompt {
   Write-Host $pwd -NoNewLine
   Write-TfsVcsStatus
-  return '> '
+  '> '
 }
 ```
 
-### Microsoft.PowerShell_profile.ps1
-
-This is an example PowerShell profile that can be used as-is if you don't already have one. If you have PowerTab, you can get tab-completion as the commands follow recommended naming practices ([Verb]-[Prefix][Noun] - Get-TfsStatus). Unfortunately, the aliases added to the example profile will not get tab completion with PowerTab enabled [without some modification][1].
-
 ### prompt
 
-Overrides the stock PowerShell prompt with one that is shorter and provides helpful TFS workspace information when the current directory is a mapped workspace folder.  Unfortunately, the prompt is not as fancy as posh-git or posh-hg due to the client/server nature of TFS.  It only displays the name of the currently mapped branch (always assuming workspaces are mapped to a single branch), the changeset # of the workspace, and optionally the changeset # of the server if different from the workspace version.
+This prompt function provides helpful TFS workspace information when the current directory is a mapped workspace folder. It's not as fancy as posh-git or posh-hg due to the client/server nature of TFS.  It only displays the name of the currently mapped branch (assuming workspaces are mapped to a single branch), the changeset # of the workspace, and optionally the changeset # of the server if different from the workspace version.
 
-**Example: `§ {C:\w\SomeMappedFolder} [Main 12345] `**  
-This tells us a few things.  First, `C:\w\SomeMappedFolder` is shortened to avoid lengthy paths from destroying the usefulness of the command line.  In this case `work` was shortened to `w`.  Next, `Main` is our branch name.  TFS standards say to name your trunk/mainline branch `Main`, but this could be any branch.  Lastly, `12345` indicates a changeset number (version).  Because only one is displayed, we know that our workspace version matches the server, which can give us some confidence that our local version is the latest.
+In the example prompt below, you can see that we're on the `Main` branch (a TFS naming convention for the master branch). And the changeset number, 12345, is listed. When only one changeset is displayed, we are synchronized with the server.
 
-**Example: `§ {C:\w\SomeMappedFolder} [Main 12345 *12350] `**  
-In this example, we see `*12350`.  This indicates that the server has a newer version than our workspace.
+```bash
+PS [Main 12345]>
+``` 
+
+In the example prompt here, you can see that there are two changesets, indicating that the server is ahead of our local workspace.
+
+```bash
+PS [Main 12345 *12350]>
+```
+
+You can further customize the PowerShell prompt with a shorter working path representation. Replace the writing of the special working directory variable (`$pwd`) with this
+
+```bash
+function prompt {
+  Write-ShortenedPath
+  Write-TfsVcsStatus
+  '> '
+}
+```
+
+A shortened prompt will look something like this, with each directory in the path before the current one being shortened to just it's first character.
+
+```bash
+§ {X:\a\b\c\SomeMappedFolder} [Main 12345]>
+```
 
 ## Usage
 
