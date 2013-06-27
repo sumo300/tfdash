@@ -1,15 +1,9 @@
-#theme
-$cdelim = [ConsoleColor]::DarkCyan;
-$chost = [ConsoleColor]::Green;
-$cloc = [ConsoleColor]::Cyan;
-$cerr = [ConsoleColor]::Red;
+$cdelim = [ConsoleColor]::DarkCyan
+$chost = [ConsoleColor]::Green
 
 function Write-ShortenedPath
 {
-  Write-Host "$([char]0x0A7) " -n -f $cloc
-	Write-Host "{" -n -f $cdelim
-	Write-Host (Get-ShortenedPath (pwd).Path) -n -f $cloc
-	Write-Host "}" -n -f $cdelim
+	Write-Host (Get-ShortenedPath (pwd).Path) -NonewLine
 }
 
 function Write-TfsVcsStatus
