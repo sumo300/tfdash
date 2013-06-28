@@ -1,4 +1,12 @@
-﻿function Invoke-CmdScript {
+##############################################################################
+##
+## Invoke-CmdScript
+##
+## From Windows PowerShell Cookbook (O'Reilly)
+## by Lee Holmes (http://www.leeholmes.com/guide)
+##
+##############################################################################
+function Invoke-CmdScript {
 <#
 .SYNOPSIS
 Invoke the specified batch file (and parameters), but also propagate any
