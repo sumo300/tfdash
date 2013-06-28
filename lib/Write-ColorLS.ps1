@@ -1,5 +1,6 @@
-﻿<#
+<#
 	Description: Get-ChildItem override to provide color
+    Adapted from: http://stackoverflow.com/questions/9406434/powershell-properly-coloring-get-childitem-output-once-and-for-all
 #>
 
 function Global:Write-ColorLS {
