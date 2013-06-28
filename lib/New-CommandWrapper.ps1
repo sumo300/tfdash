@@ -1,4 +1,12 @@
-﻿function global:New-CommandWrapper {
+##############################################################################
+##
+## New-CommandWrapper
+##
+## From Windows PowerShell Cookbook (O'Reilly)
+## by Lee Holmes (http://www.leeholmes.com/guide)
+##
+##############################################################################
+function global:New-CommandWrapper {
 	<#
 
 	.SYNOPSIS
