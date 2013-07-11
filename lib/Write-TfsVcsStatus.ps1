@@ -1,6 +1,3 @@
-$cdelim = [ConsoleColor]::DarkCyan
-$chost = [ConsoleColor]::Green
-
 function Write-ShortenedPath
 {
 	Write-Host (Get-ShortenedPath (pwd).Path) -NonewLine
