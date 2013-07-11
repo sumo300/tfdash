@@ -6,6 +6,11 @@
 
 $tfpt = "${Env:ProgramFiles(x86)}\Microsoft Team Foundation Server 2010 Power Tools\TFPT.EXE"
 
+$cdelim = [ConsoleColor]::DarkCyan;
+$chost = [ConsoleColor]::Green;
+$cloc = [ConsoleColor]::Cyan;
+$cerr = [ConsoleColor]::Red;
+
 Get-ChildItem $PSScriptRoot\lib -Include *.ps1 -Recurse | %{ . $_.FullName }
 
 Set-Alias tf-pull Invoke-TfsPull
