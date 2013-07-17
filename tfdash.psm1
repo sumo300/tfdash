@@ -15,8 +15,9 @@ Get-ChildItem $PSScriptRoot\lib -Include *.ps1 -Recurse | %{ . $_.FullName }
 
 Set-Alias tf-pull Invoke-TfsPull
 Set-Alias tf-pu Invoke-TfsPull
-Set-Alias tf-update Invoke-TfsUpdate
-Set-Alias tf-up Invoke-TfsUpdate
+Set-Alias tf-update Get-TfsLatest
+Set-Alias tf-up Get-TfsLatest
+Set-Alias tf-latest Get-TfsLatest
 Set-Alias tf-sync Invoke-TfsSync
 Set-Alias tf-sy Invoke-TfsSync
 Set-Alias tf-switch Invoke-TfsSync

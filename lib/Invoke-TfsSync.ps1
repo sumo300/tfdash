@@ -3,7 +3,7 @@ function Invoke-TfsSync([string]$path) {
 	.SYNOPSIS
 	Switches your TFS workfolder mapping to the provided TFS path and gets the latest version of the files.
 	.DESCRIPTION
-	The Invoke-TfsSync function calls Invoke-TfsPull and Invoke-TfsUpdate in order to provide branch switching functionality.
+	The Invoke-TfsSync function calls Invoke-TfsPull and Get-TfsLatest in order to provide branch switching functionality.
 	.PARAMETER path
 	The TFS path being mapped to.
 	.NOTES
@@ -30,5 +30,5 @@ function Invoke-TfsSync([string]$path) {
 	Write-Progress -id 1 -Activity "Synchronizing workfolder to $path"
   }
 
-  Invoke-TfsUpdate
+  Get-TfsLatest
 }
