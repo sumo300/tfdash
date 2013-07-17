@@ -1,4 +1,4 @@
-function Invoke-TfsUndo([string]$path = ".", [switch]$WhatIf) {
+function Undo-TfsChange([string]$path = ".", [switch]$WhatIf) {
 <#
 	.SYNOPSIS
 	Undoes pending changes from the provided path recursively.
@@ -9,13 +9,13 @@ function Invoke-TfsUndo([string]$path = ".", [switch]$WhatIf) {
 	.PARAMETER -WhatIf
 	Forces undo to prompt for a confirmation.
 	.EXAMPLE
-	Invoke-TfsUndo
+	Undo-TfsChange
 	.EXAMPLE
-	Invoke-TfsUndo .\HelloWorld\*.cs
+	Undo-TfsChange .\HelloWorld\*.cs
 	.EXAMPLE
-	Invoke-TfsUndo -WhatIf
+	Undo-TfsChange -WhatIf
 	.EXAMPLE
-	Invoke-TfsUndo .\HelloWorld\*.cs -WhatIf
+	Undo-TfsChange .\HelloWorld\*.cs -WhatIf
 #>
 	Write-Output " "
 	Write-Output "Undoing pending changes recursively..."

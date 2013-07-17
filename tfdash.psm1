@@ -46,7 +46,7 @@ Set-Alias tf-clean Invoke-TfsClean
 Set-Alias tf-cl Invoke-TfsClean
 Set-Alias tf-scorch Invoke-TfsScorch
 Set-Alias tf-sc Invoke-TfsScorch
-Set-Alias tf-undo Invoke-TfsUndo
-Set-Alias tf-un Invoke-TfsUndo
+Set-Alias tf-undo Undo-TfsChange
+Set-Alias tf-un Undo-TfsChange
 
 Export-ModuleMember -Function * -Alias *
