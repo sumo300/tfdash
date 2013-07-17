@@ -17,7 +17,7 @@ function Invoke-TfsPull([string]$path) {
 
 	tf workfold /map $path .\ | foreach-object {
 		$item = "> " + $_
-		Write-Progress -id 2 -parentId 1 -Activity "Switching workfolder to $path.  Don't forget to do a 'Invoke-TfsUpdate'" -Status $item
+		Write-Progress -id 2 -parentId 1 -Activity "Switching workfolder to $path.  Don't forget to do a 'Get-TfsLatest'" -Status $item
 	}
 	
 	Reset-TfsGlobals
