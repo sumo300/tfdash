@@ -18,10 +18,10 @@ Set-Alias tf-pu Invoke-TfsPull
 Set-Alias tf-update Get-TfsLatest
 Set-Alias tf-up Get-TfsLatest
 Set-Alias tf-latest Get-TfsLatest
-Set-Alias tf-sync Invoke-TfsSync
-Set-Alias tf-sy Invoke-TfsSync
-Set-Alias tf-switch Invoke-TfsSync
-Set-Alias tf-sw Invoke-TfsSync
+Set-Alias tf-sync Switch-TfsBranch
+Set-Alias tf-sy Switch-TfsBranch
+Set-Alias tf-switch Switch-TfsBranch
+Set-Alias tf-sw Switch-TfsBranch
 Set-Alias tf-status Get-TfsStatus
 Set-Alias tf-stat Get-TfsStatus
 Set-Alias tf-st Get-TfsStatus

@@ -1,18 +1,18 @@
-function Invoke-TfsSync([string]$path) {
+function Switch-TfsBranch([string]$path) {
 <#
 	.SYNOPSIS
 	Switches your TFS workfolder mapping to the provided TFS path and gets the latest version of the files.
 	.DESCRIPTION
-	The Invoke-TfsSync function calls Invoke-TfsPull and Get-TfsLatest in order to provide branch switching functionality.
+	The Switch-TfsBranch function calls Invoke-TfsPull and Get-TfsLatest in order to provide branch switching functionality.
 	.PARAMETER path
 	The TFS path being mapped to.
 	.NOTES
 	Command must be run from the root folder of the workspace.
 	.EXAMPLE
-	Invoke-TfsSync "$/Web/Source/UAT"
+	Switch-TfsBranch "$/Web/Source/UAT"
 #>
   if ($path -eq "") {
-    Get-Help Invoke-TfsSync -detailed
+    Get-Help Switch-TfsBranch -detailed
     return
   }
 
