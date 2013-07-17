@@ -3,7 +3,7 @@ function Switch-TfsBranch([string]$path) {
 	.SYNOPSIS
 	Switches your TFS workfolder mapping to the provided TFS path and gets the latest version of the files.
 	.DESCRIPTION
-	The Switch-TfsBranch function calls Invoke-TfsPull and Get-TfsLatest in order to provide branch switching functionality.
+	The Switch-TfsBranch function calls Switch-TfsPath and Get-TfsLatest in order to provide branch switching functionality.
 	.PARAMETER path
 	The TFS path being mapped to.
 	.NOTES
@@ -26,7 +26,7 @@ function Switch-TfsBranch([string]$path) {
 	return
   }
   
-  Invoke-TfsPull $path | foreach-object {
+  Switch-TfsPath $path | foreach-object {
 	Write-Progress -id 1 -Activity "Synchronizing workfolder to $path"
   }
 

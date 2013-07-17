@@ -13,8 +13,8 @@ $cerr = [ConsoleColor]::Red;
 
 Get-ChildItem $PSScriptRoot\lib -Include *.ps1 -Recurse | %{ . $_.FullName }
 
-Set-Alias tf-pull Invoke-TfsPull
-Set-Alias tf-pu Invoke-TfsPull
+Set-Alias tf-pull Switch-TfsPath
+Set-Alias tf-pu Switch-TfsPath
 Set-Alias tf-update Get-TfsLatest
 Set-Alias tf-up Get-TfsLatest
 Set-Alias tf-latest Get-TfsLatest
