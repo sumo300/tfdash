@@ -41,7 +41,7 @@ Set-Alias tf-revisions Get-TfsVersions
 Set-Alias tf-rev Get-TfsVersions
 Set-Alias tf-versions Get-TfsVersions
 Set-Alias tf-ver Get-TfsVersions
-Set-Alias tf-uu Invoke-TfsUndoUnchanged
+Set-Alias tf-uu Undo-TfsUnchanged
 Set-Alias tf-clean Invoke-TfsClean
 Set-Alias tf-cl Invoke-TfsClean
 Set-Alias tf-scorch Invoke-TfsScorch
