@@ -4,7 +4,7 @@
 	License:     GNU GENERAL PUBLIC LICENSE v3 (see license.txt for full license)
 #>
 param (
-	[parameter(Position=0,Mandatory=$false)[string]$version="2013"
+	[parameter(Position=0,Mandatory=$false)][string]$version="2013"
 )
 $tfpt = "${Env:ProgramFiles(x86)}\Microsoft Team Foundation Server $version Power Tools\TFPT.EXE"
 
