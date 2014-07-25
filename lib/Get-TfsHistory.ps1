@@ -19,5 +19,5 @@ function Get-TfsHistory([int]$count = 5) {
 	#	$item.Committer = $item.Committer -replace "[ActiveDirectoryDomainNameHere]\\", ""
 	#}
 	
-	$history | select @{name="Version"; expression={$_.ChangesetId}}, Committer, @{name="Date"; expression={$_.CreationDate}}, Comment | Format-Table -AutoSize
+	$history | select @{name="Version"; expression={$_.ChangesetId}}, @{name="Committer"; expression={$_.Committer.Substring($_.Committer.IndexOf("\")+1)}}, CodeReviewer, @{name="Date"; expression={$_.CreationDate}}, Comment | Format-Table -AutoSize
 }

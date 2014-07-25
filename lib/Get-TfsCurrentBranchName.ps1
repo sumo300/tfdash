@@ -13,12 +13,11 @@ function Get-TfsCurrentBranchName {
 	Matches 2012.02.28 in a TFS workspace folder like
 	$/Web/Source/Release/2012/2012.02.28: D:\tfs\_work
 #>
-	$current = tf workfold .;
-	$match = [regex]::Match($current, "([\$][^\:]*[\/])([^\/:]*)[\:]");
-
-	if ($match.Success) {
-		Write-Output $match.Groups[2]
-	} else {
+	try {
+		$current = Get-TfsWorkspace . | Select -ExpandProperty Folders | Select -ExpandProperty ServerItem
+		$index = $current.lastIndexOf("/")
+		Write-Output $current.substring($index + 1, $current.length - $index - 1)
+	} catch {
 		Write-Output $null
 	}
 }

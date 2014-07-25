@@ -1,10 +1,19 @@
 ﻿<#
-	Description: TFS 2010 PowerShell Helper Functions
+	Description: TFS PowerShell Helper Functions
 	Author:      Michael J. Sumerano
 	License:     GNU GENERAL PUBLIC LICENSE v3 (see license.txt for full license)
 #>
+param (
+	[parameter(Position=0,Mandatory=$false)[string]$version="2013"
+)
+$tfpt = "${Env:ProgramFiles(x86)}\Microsoft Team Foundation Server $version Power Tools\TFPT.EXE"
 
-$tfpt = "${Env:ProgramFiles(x86)}\Microsoft Team Foundation Server 2010 Power Tools\TFPT.EXE"
+if (Test-Path $tfpt) {
+	Write-Host "Using TFTP $version" -foregroundColor Red
+} else {
+	Write-Host "The version of TFTP specified, $version, is not installed." -foregroundColor Red
+	return
+}
 
 $cdelim = [ConsoleColor]::DarkCyan;
 $chost = [ConsoleColor]::Green;
@@ -48,5 +57,8 @@ Set-Alias tf-scorch Invoke-TfsScorch
 Set-Alias tf-sc Invoke-TfsScorch
 Set-Alias tf-undo Undo-TfsChange
 Set-Alias tf-un Undo-TfsChange
+Set-Alias tf-online Invoke-TfsOnline
+Set-Alias tf-on Invoke-TfsOnline
+Set-Alias tf-addremove Invoke-TfsOnline
 
 Export-ModuleMember -Function * -Alias *
