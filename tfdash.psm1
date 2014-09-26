@@ -60,5 +60,7 @@ Set-Alias tf-un Undo-TfsChange
 Set-Alias tf-online Invoke-TfsOnline
 Set-Alias tf-on Invoke-TfsOnline
 Set-Alias tf-addremove Invoke-TfsOnline
+Set-Alias tf-promote Invoke-TfsPromote
+Set-Alias tf-pm Invoke-TfsPromote
 
 Export-ModuleMember -Function * -Alias *
