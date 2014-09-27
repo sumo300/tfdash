@@ -11,7 +11,11 @@ $tfpt = "${Env:ProgramFiles(x86)}\Microsoft Team Foundation Server $version Powe
 if (Test-Path $tfpt) {
 	Write-Host "Using TFTP $version" -foregroundColor Red
 } else {
-	Write-Host "The version of TFTP specified, $version, is not installed." -foregroundColor Red
+	Write-Warning "Microsoft's Team Foundation Power Tools (TFPT) $version is not installed."
+	Write-Warning "Versions 2010, 2012, or 2013 must be installed for this module to function."
+	Write-Warning "If you have another version installed, you can use Import-Module TfDash -ArgumentList [TFPTVersion] to import the module for that specific version of TFPT."
+    Write-Warning "To automatically load it with a version other than 2013, you'll need to add it to your PowerShell profile."
+	Write-Warning "Please see the project site (https://bitbucket.org/Sumo/tfdash) for more information."
 	return
 }
 
