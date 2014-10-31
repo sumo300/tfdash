@@ -16,6 +16,8 @@ Then, install TfDash using PsGet:
 PS> Install-Module TfDash
 ```
 
+See [PSGet](http://psget.net/) for more information and examples.
+
 ## Alternatively by cloning this repository into your user Modules directory
 
 ```powershell
