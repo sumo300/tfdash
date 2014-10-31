@@ -41,7 +41,7 @@ Import-Module tfdash
 # Prerequisites
 
 ## Visual Studio Command Prompt
-The [Visual Studio Command Prompt][2] "automatically sets the environment variables that enable you to easily use .NET Framework tools." We need `tf.exe` on your `PATH`. You _may_ use the [PowerShell Community Extensions][4], add this to your profile
+The [Visual Studio Command Prompt][2] automatically sets the environment variables that enable you to easily use .NET Framework tools." We need `tf.exe` on your `PATH`. You _may_ use the [PowerShell Community Extensions][4], add this to your profile
 
 ```powershell
 Import-VisualStudioVars
@@ -90,19 +90,19 @@ function prompt {
 
 In the example below, you can see that we're on the `Main` branch (a TFS naming convention for the master branch). And the changeset number, 12345, is listed. When only one changeset is displayed, we are synchronized with the server.
 
-```powershell
+```text
 PS [Main 12345]>
 ``` 
 
 In the example here, you can see that there are two changesets, indicating that the server is ahead of our local workspace.
 
-```powershell
+```text
 PS [Main 12345 *12350]>
 ```
 
 As a bonus, you may replace the full working directory (`$pwd`) with a shortened path by using this function in your prompt, `Write-ShortenedPath`. A shortened prompt will look something like this, with each directory in the path before the current one being shortened to just it's first character.
 
-```powershell
+```text
 X:\a\b\c\SomeMappedFolder [Main 12345]>
 ```
 
