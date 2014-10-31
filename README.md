@@ -1,8 +1,22 @@
-TfDash wraps the TFS command-line tool and the Team Foundation Power Tools. It makes switching branches as simple as it is in Subversion, Git, and Mercurial (without requiring full branch downloads)!
+TfDash wraps the TFS command-line tool and the Team Foundation Power Tools. It makes tasks like switching branches, getting latest, promoting changes (adds/deletes/modifies), and cleaning your workspace as simple as it is in Subversion, Git, and Mercurial!
 
 # Installation
 
-Clone this repository into your user Modules directory
+## Using PsGet
+
+First, install PsGet if you don't yet have it:
+
+```powershell
+PS> (new-object Net.WebClient).DownloadString("http://psget.net/GetPsGet.ps1") | iex
+```
+
+Then, install TfDash using PsGet:
+
+```powershell
+PS> Install-Module TfDash
+```
+
+## Alternatively by cloning this repository into your user Modules directory
 
 ```powershell
 PS> cd (split-path $profile)
