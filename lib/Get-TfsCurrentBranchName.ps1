@@ -1,5 +1,3 @@
-#  Matches 2012.02.28 in a TFS workspace folder like
-#  $/Web/Source/Release/2012/2012.02.28: D:\tfs\_MainWork
 function Get-TfsCurrentBranchName {
 <#
 	.SYNOPSIS

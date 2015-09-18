@@ -3,7 +3,10 @@
     [alias("ni")]
     $noIgnore,
     [string]
-    $exclude = ""
+    $exclude = "",
+    [switch]
+    [alias("np")]
+    $noPrompt
 ) {
 <#
 	.SYNOPSIS
@@ -14,6 +17,8 @@
     Forces inclusions of files that would normally be ignored by default and/or by presence of .tfignore file.  Alias: ni.
     .PARAMETER exclude
     A comma-separated list of file/folder exclusions to skip.  Each one follows the standard TFS "itemspec" format.
+    .PARAMETER noPrompt
+    Skips approval of pending change prompotion.
 	.EXAMPLE
 	Invoke-TfsPromote
     .EXAMPLE
@@ -34,8 +39,12 @@
     if (-not [string]::IsNullOrWhiteSpace($exclude)) {
         $exclusion = "/exclude:$exclude"
     }
+    
+    if ($noPrompt) {
+        $np = "/noprompt"
+    }
 
-    tf reconcile . /promote /adds /deletes /diff /recursive $ni $exclusion
+    tf reconcile . /promote /adds /deletes /diff /recursive $ni $np $exclusion
     
     Write-Host " "
 }
