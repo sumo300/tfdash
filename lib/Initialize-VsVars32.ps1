@@ -1,15 +1,15 @@
-function Initialize-VsVars32($version = "10.0")
+function Initialize-VsVars32($version = "14.0")
 {
         <#
                 .SYNOPSIS
                 Executes the Visual Studio batch file that sets up environment 
                 variables specific to Visual Studio's command line.
                 .PARAMETER version
-                The version of Visual Studio to run the batch file for.  Default is "10.0".
+                The version of Visual Studio to run the batch file for.  Default is "14.0".
                 .EXAMPLE
                 Initialize-VsVars32
                 .EXAMPLE
-                Initialize-VsVars32 "10.0"
+                Initialize-VsVars32 "14.0"
         #>
         
     $key = "HKCU:SOFTWARE\Microsoft\VisualStudio\" + $version + "_Config"
