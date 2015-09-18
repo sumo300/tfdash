@@ -3,7 +3,7 @@ $tfpt_reg_key_psv3 = 'HKLM:\SOFTWARE\Microsoft\PowerShell\3\PowerShellSnapIns\Mi
 $isWin7AndUp = [Environment]::OSVersion.Version -ge (New-Object 'Version' 6,1)
 
 # Add necessary registry entry to be able to use the TFPT cmdlets from x64
-function Register-TfptCmdlets64([string]$version = "2013") {
+function Register-TfptCmdlets64([string]$version = "2015") {
   if ($isWin7AndUp) {
     if (-not (Test-Path $tfpt_reg_key)) {
       regedit /s $PSScriptRoot\tfpt$version-x64.reg
@@ -21,7 +21,7 @@ function Register-TfptCmdlets64([string]$version = "2013") {
 #}
 
 # Make the TFPT PowerShell Cmdlets available
-function Register-TfptCmdlets([string]$version = "2013") {
+function Register-TfptCmdlets([string]$version = "2015") {
 	$tfpt_assm = "${Env:ProgramFiles(x86)}\Microsoft Team Foundation Server $version Power Tools\Microsoft.TeamFoundation.PowerTools.PowerShell.dll"
 	if (Test-Path $tfpt_assm) {
 		Add-PSSnapin Microsoft.TeamFoundation.PowerShell
