@@ -1,7 +1,7 @@
 Windows Registry Editor Version 5.00
 
-[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\PowerShellSnapIns\Microsoft.TeamFoundation.PowerShell]
-"PowerShellVersion"="2.0"
+[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\3\PowerShellSnapIns\Microsoft.TeamFoundation.PowerShell]
+"PowerShellVersion"="3.0"
 "Vendor"="Microsoft Corporation"
 "Description"="This is a PowerShell snap-in that includes the Team Foundation Server cmdlets."
 "VendorIndirect"="Microsoft.TeamFoundation.PowerShell,Microsoft"
